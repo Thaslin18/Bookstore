@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+       .book-list-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+    object-fit: cover; 
+    height: auto;
+}
+.image-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+.book-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 50px; 
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+.back-btn {
+    position: fixed;   
+    top: 100px;       
+    left: 20px;        
+    padding: 10px 20px;
+    background-color: #a4680e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 1000;     
+}
+
+.back-btn:hover {
+    background-color: #055461;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">BOOK CRACK</div>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'product' %}">Products</a></li>
+            <li><a href="{% url 'cart' %}">Cart</a></li>
+            <li><a href="{% url 'checkout' %}">Checkout</a></li>
+        </ul>
+        <div class="nav-icons">
+            <i class="fas fa-search"></i>
+            <a href="{% url 'login' %}" style="text-decoration: none;">
+            <button class="auth-btn">Login</button>
+            </a>
+            <a href="{% url 'signup' %}" style="text-decoration: none;">
+            <button class="auth-btn">Sign Up</button>
+            </a>
+        </div>
+    </nav>
+     <h2 style="text-align: center;">Fantasy</h2>
+     <a href="{% url 'product' %}" class="back-btn">← Back</a>
+     <div class="book-grid-container">
+    <div class="book-list-item" >
+        <img src="{%static 'images/f1.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Book That Wounldn't Burn</h1>
+        <h3>Description</h3>
+        <p style="text-align: left;">The Book That Wouldn't Burn by Mark Lawrence, 
+            two isolated strangers—Evar, a boy trapped in an ancient, city-sized library, 
+            and Livira, a refugee girl from a harsh desert settlement—find their lives spiraling 
+            together across time and worlds, thrusting them into a dangerous journey where knowledge erodes certainty</p>
+        <p><strong>Price: ₹480</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+       </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/f2.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Boundary</h1>
+         <h3>Description</h3>
+        <p style="text-align: left;"> A gripping murder mystery that weaves native title 
+            disputes with historical trauma. When a judge rejects a sacred Aboriginal land claim, 
+            he and the developer's lawyers are mysteriously murdered. Detective Jason Matthews must
+            solve the case while confronting his own heritage.</p>
+        <p><strong>Price: ₹300</strong></p>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+       </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/f3.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Infinite Librarian</h1>
+         <h3>Description</h3>
+        <p style="text-align: left;">a surreal, philosophical, and metaphysical speculative fiction novel. 
+            It explores a Borges-like, living archive where the library's architecture responds directly to 
+            thought, shelves reorganize themselves, and books write themselves in the air as a solitary reader 
+            navigates its impossible, nested stories.</p>
+        <p><strong>Price: ₹400</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/f4.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>Where The Ivy Sleeps</h1>
+        <p><strong>Price: ₹350</strong></p>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+    <div class="book-list-item">
+        <img src="{%static 'images/f5.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>Dream Dwellers</h1>
+        <p><strong>Price: ₹450</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/f6.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Town That Keeps You</h1>
+        <p><strong>Price: ₹400</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+       </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/f7.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>Mystery of The Midnight Sky</h1>
+        <p><strong>Price: ₹600</strong></p>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/f8.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>This Was Never An Accident</h1>
+        <p><strong>Price: ₹550</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/f9.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>A Timeless Flower</h1>
+        <p><strong>Price: ₹650</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/f10.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>Fractures Fairytale</h1>
+        <p><strong>Price: ₹450</strong></p>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+       </div>
+    <div class="book-list-item">
+        <img src="{%static 'images/f11.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>Anything For Her</h1>
+        <p><strong>Price: ₹400</strong></p>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+    <div class="book-list-item">
+        <img src="{%static 'images/f12.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Mystical Realms</h1>
+        <p><strong>Price: ₹450</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/f13.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>Echoes Of Eternity</h1>
+        <p><strong>Price: ₹650</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/f14.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>Mystic Whispers</h1>
+        <p><strong>Price: ₹450</strong></p>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/f15.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Wall Breakers</h1>
+        <p><strong>Price: ₹600</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/f16.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Night Realm</h1>
+        <p><strong>Price: ₹750</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+       </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/f17.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Eternal Night</h1>
+        <p><strong>Price: ₹590</strong></p>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/f18.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Silver Crow</h1>
+        <p><strong>Price: ₹450</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+    </div>
+</body>
+</html>

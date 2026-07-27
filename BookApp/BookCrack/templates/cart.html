@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">BOOK CRACK</div>
+        <div class="nav-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About Us</a>
+            <a href="{% url 'product' %}">Products</a>
+            <a href="{% url 'cart' %}">Cart</a>
+            <a href="{% url 'checkout' %}">Checkout</a>
+        </div>
+       <div class="nav-icons">
+            <i class="fas fa-search"></i>
+            <a href="{% url 'login' %}" style="text-decoration: none;">
+            <button class="auth-btn">Login</button>
+            </a>
+            <a href="{% url 'signup' %}" style="text-decoration: none;">
+            <button class="auth-btn">Sign Up</button>
+            </a>
+        </div>
+    </nav>
+
+    <main class="cart-wrapper">
+        <h1>Your Shopping Cart</h1>
+        <div class="book-card">
+            <img src="{%static 'images/book 3 adv.jpg' %}" alt="Pearcy Jackson" class="book-image">
+            <h2 class="book-title">Pearcy Jackson</h2>
+            <p class="book-price">Price: ₹499</p>
+         <a href="{% url 'checkout' %}" class="buy-now-btn" style="background-color: aqua; text-decoration: none;">
+    Buy Now
+</a>
+        </div>
+        <div class="book-card">
+            <img src="{%static 'images/book 4 love.jpg' %}" alt="Pride and Prejudice" class="book-image">
+            <h2 class="book-title">Pride and Prejudice</h2>
+            <p class="book-price">Price: ₹480</p>
+            <a href="{% url 'checkout' %}" class="buy-now-btn" style="background-color: aqua; text-decoration: none;">
+    Buy Now
+</a>
+        </div>
+         <div class="book-card">
+            <img src="{%static 'images/fiction book 2.jpg' %}" alt="The begining of the game" class="book-image">
+            <h2 class="book-title">The begining of the game</h2>
+            <p class="book-price">Price: ₹380</p>
+            <a href="{% url 'checkout' %}" class="buy-now-btn" style="background-color: aqua; text-decoration: none;">
+    Buy Now
+</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>✉️ contact@bookcrack.com | 📞 +91 98765 43210</p>
+        <p>© 2026 Book Haven. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

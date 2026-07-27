@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+       .book-list-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+    object-fit: cover; 
+    height: auto;
+}
+.image-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+.book-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 50px; 
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+.back-btn {
+    position: fixed;   
+    top: 100px;       
+    left: 20px;        
+    padding: 10px 20px;
+    background-color: #a4680e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 1000;     
+}
+
+.back-btn:hover {
+    background-color: #055461;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">BOOK CRACK</div>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'product' %}">Products</a></li>
+            <li><a href="{% url 'cart' %}">Cart</a></li>
+            <li><a href="{% url 'checkout' %}">Checkout</a></li>
+        </ul>
+        <div class="nav-icons">
+            <i class="fas fa-search"></i>
+            <a href="{% url 'login' %}" style="text-decoration: none;">
+            <button class="auth-btn">Login</button>
+            </a>
+            <a href="{% url 'signup' %}"style="text-decoration: none;">
+            <button class="auth-btn">Sign Up</button>
+            </a>
+        </div>
+    </nav>
+     <h2 style="text-align: center;">Science</h2>
+     <a href="{% url 'product' %}" class="back-btn">← Back</a>
+     <div class="book-grid-container">
+    <div class="book-list-item" >
+        <img src="{%static 'images/s1.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Axis Of Nebula</h1>
+        <h3>Description</h3>
+        <p style="text-align: left;">A web novel following Amara, an engineer and a 200,000-year-old 
+            immortal whose life and parameters were secretly engineered by the universe's highest intellects. 
+            After the Solar System is destroyed, she is flung into the heart of the universe to navigate a perilous 
+            web of power, manipulation, and hidden truths.</p>
+        <p><strong>Price: ₹480</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+       <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>  </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/s2.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The First Traverse</h1>
+         <h3>Description</h3>
+        <p style="text-align: left;">The living starship The Wanderer drifts through the cosmos, struggling 
+            to navigate strange celestial environments while dealing with bureaucratic interstellar red tape and 
+            complicated demands from cosmic stockholders.</p>
+        <p><strong>Price: ₹300</strong></p>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/s3.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Archieve Between Stars</h1>
+         <h3>Description</h3>
+        <p style="text-align: left;">Inkitt. It follows elite Memory Diver Elara Voss, who expects a routine 
+            forensic dive into a dead deep-space scientist's final thoughts, but instead discovers an impossible, 
+            hidden structure.</p>
+        <p><strong>Price: ₹400</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/s4.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>Nexux</h1>
+        <p><strong>Price: ₹350</strong></p>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+       </div>
+    <div class="book-list-item">
+        <img src="{%static 'images/s5.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Final Frontier</h1>
+        <p><strong>Price: ₹450</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/s6.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>Blue Sky graveyard</h1>
+        <p><strong>Price: ₹400</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+       </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/s7.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Dead Lanes Are Close</h1>
+        <p><strong>Price: ₹600</strong></p>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/s8.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>Afterfall</h1>
+        <p><strong>Price: ₹550</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/s9.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The World In 2027</h1>
+        <p><strong>Price: ₹650</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/s10.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Dogon Code</h1>
+        <p><strong>Price: ₹450</strong></p>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+       </div>
+    <div class="book-list-item">
+        <img src="{%static 'images/s12.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>Who Ruled The Universe?</h1>
+        <p><strong>Price: ₹400</strong></p>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+       </div>
+    <div class="book-list-item">
+        <img src="{%static 'images/s13.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Nile Beneath Carolina</h1>
+        <p><strong>Price: ₹450</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/s14.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>Nirvana</h1>
+        <p><strong>Price: ₹650</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+       </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/s15.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The North Star</h1>
+        <p><strong>Price: ₹450</strong></p>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/s16.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>Beauty Blood And The Stars</h1>
+        <p><strong>Price: ₹600</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/s17.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Awakening</h1>
+        <p><strong>Price: ₹750</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/s18.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>Blood of Hercules</h1>
+        <p><strong>Price: ₹590</strong></p>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+        </div>
+     <div class="book-list-item">
+        <img src="{%static 'images/s19.jpg' %}" alt="Book" style="width: 200px;">
+        <h1>The Cursed</h1>
+        <p><strong>Price: ₹450</strong></p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <br>
+         <a href="{% url 'checkout' %}" style="background: aqua; padding: 10px 20px; text-decoration: none; display: inline-block; color: black;">Buy Now</a>
+       </div>
+    </div>
+</body>
+</html>
