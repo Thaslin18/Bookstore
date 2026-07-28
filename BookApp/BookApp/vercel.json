@@ -2,15 +2,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "BookApp/BookApp/wsgi.py",
+      "src": "BookApp/BookApp/BookApp/wsgi.py",
       "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb" }
     }
   ],
   "routes": [
     {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "BookApp/BookApp/wsgi.py"
+      "dest": "BookApp/BookApp/BookApp/wsgi.py"
     }
   ]
 }
